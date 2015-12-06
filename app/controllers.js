@@ -14,7 +14,9 @@ function filePipe(req, res, next) {
   let source = makeUrlForFilePipe(req.params[0], req.query)
   let config = req.app.get('config')
   if (!req.hostname === config.get('baseDomain')) { next() }
-  if(!validator.isURL(source.replace(/ /g, '%20'))) { return res.status(404) }
+  if(!validator.isURL(source.replace(/ /g, '%20'))) {
+    return res.status(404).send('not found.')
+  }
   return request(source).pipe(res)
 }
 
