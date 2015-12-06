@@ -24,7 +24,7 @@ describe('proxy types', () => {
   })
   it('proxies any url', (done) => {
     let source = 'https://raw.githubusercontent.com/dataprotocols/schemas/master/registry.csv'
-    let filePipe = defaultDomain + '/file/' + source
+    let filePipe = defaultDomain + '/pipe/' + source
     request(filePipe, (err, res, body) => {
       assert.isString(body)
       assert.include(body, 'id,')

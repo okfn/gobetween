@@ -10,7 +10,7 @@ npm install
 npm start
 ```
 
-We've now got a server running. By default, `127.0.0.1` is setup to proxy `google.com` in the `DOMAIN_MAP`, and additionally `127.0.0.1:3000` is the `BASE_DOMAIN` which allows you to use the `/file/` endpoint to proxy any URI.
+We've now got a server running. By default, `127.0.0.1` is setup to proxy `google.com` in the `DOMAIN_MAP`, and additionally `127.0.0.1:3000` is the `BASE_DOMAIN` which allows you to use the `/pipe/` endpoint to proxy any URI.
 
 ## Domain
 
@@ -18,7 +18,7 @@ Go to `127.0.0.1:3000/`. You should see `google.com`.
 
 ## File
 
-Go to `127.0.0.1:3000/https://raw.githubusercontent.com/dataprotocols/schemas/master/data-package.json`. you should see `https://raw.githubusercontent.com/dataprotocols/schemas/master/data-package.json`.
+Go to `127.0.0.1:3000/pipe/https://raw.githubusercontent.com/dataprotocols/schemas/master/data-package.json`. you should see `https://raw.githubusercontent.com/dataprotocols/schemas/master/data-package.json`.
 
 # Configuration
 
@@ -31,4 +31,4 @@ Here is an example of a real configuration:
 * `DOMAIN_MAP`: `schemas.datapackages.org==https://raw.githubusercontent.com/dataprotocols/schemas/master`
 * `BASE_DOMAIN`: `gobetween.oklabs.org`
 
-This configuration exposes `gobetween.oklabs.org/{URI_TO_PROXY}` as the file proxy, and `schemas.datapackages.org` serves up whatever files it can find under the `https://raw.githubusercontent.com/dataprotocols/schemas/master` path.
+This configuration exposes `gobetween.oklabs.org/pipe/{URI_TO_PROXY}` as the file proxy, and `schemas.datapackages.org` serves up whatever files it can find under the `https://raw.githubusercontent.com/dataprotocols/schemas/master` path.
