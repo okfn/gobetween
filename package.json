@@ -1,0 +1,38 @@
+{
+  "name": "gobetween",
+  "version": "0.1.0-alpha",
+  "description": "A simple app for proxying requests with CORS support.",
+  "main": "server.js",
+  "scripts": {
+    "run": "node server.js",
+    "test": "mocha --require babel-core/register --timeout 5000 test/*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/okfn/gobetween.git"
+  },
+  "author": "Open Knowledge",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/okfn/gobetween/issues"
+  },
+  "homepage": "https://github.com/okfn/gobetween#readme",
+  "dependencies": {
+    "babel-core": "^6.3.13",
+    "babel-polyfill": "^6.3.14",
+    "babel-preset-es2015": "^6.3.13",
+    "cors": "^2.7.1",
+    "express": "^4.13.3",
+    "lodash": "^3.10.1",
+    "nconf": "^0.8.2",
+    "request": "^2.67.0",
+    "throng": "^1.0.1",
+    "validator": "^4.4.0"
+  },
+  "devDependencies": {
+    "chai": "^3.4.1",
+    "jsdom": "^7.1.1",
+    "mocha": "^2.3.4",
+    "mocha-jsdom": "^1.0.0"
+  }
+}
