@@ -4,19 +4,20 @@ import request from 'request'
 import jsdom from 'mocha-jsdom'
 import { start } from '../app'
 
-const defaultDomain = 'http://127.0.0.1:3000'
+const mappedDomain = 'http://127.0.0.1:3000'
+const baseDomain = 'http://localhost:3000'
 
 describe('proxy types', () => {
   before( function () { start() } )
   it('proxies domain to domain', (done) => {
-    request(defaultDomain, (err, res, body) => {
+    request(mappedDomain, (err, res, body) => {
       assert.isString(body)
       assert.include(body, 'Google.com')
       done()
     })
   })
   it('proxies domain to uri path', (done) => {
-    request(defaultDomain, (err, res, body) => {
+    request(mappedDomain, (err, res, body) => {
       // TODO: example where proxied root is like:
       // https://raw.githubusercontent.com/dataprotocols/schemas/master
       done()
@@ -24,7 +25,7 @@ describe('proxy types', () => {
   })
   it('proxies any url', (done) => {
     let source = 'https://raw.githubusercontent.com/dataprotocols/schemas/master/registry.csv'
-    let filePipe = defaultDomain + '/pipe/' + source
+    let filePipe = baseDomain + '/pipe/' + source
     request(filePipe, (err, res, body) => {
       assert.isString(body)
       assert.include(body, 'id,')

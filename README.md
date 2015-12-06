@@ -1,5 +1,8 @@
 # GoBetween
 
+[![Travis Build Status](https://travis-ci.org/okfn/gobetween.svg?branch=master)](https://travis-ci.org/okfn/gobetween)
+[![Coveralls](http://img.shields.io/coveralls/okfn/gobetween.svg?branch=master)](https://coveralls.io/r/okfn/gobetween?branch=master)
+
 A simple app for proxying requests with CORS support. Map any domain to any URI as a base path, or, use a dedicated endpoint for proxying any URI.
 
 # Quickstart
@@ -10,7 +13,7 @@ npm install
 npm start
 ```
 
-We've now got a server running. By default, `127.0.0.1` is setup to proxy `google.com` in the `DOMAIN_MAP`, and additionally `127.0.0.1:3000` is the `BASE_DOMAIN` which allows you to use the `/pipe/` endpoint to proxy any URI.
+We've now got a server running. By default, `127.0.0.1` is setup to proxy `google.com` in the `DOMAIN_MAP`, and additionally `localhost` is the `BASE_DOMAIN` which allows you to use the `/pipe/` endpoint to proxy any URI.
 
 ## Domain
 
@@ -18,7 +21,7 @@ Go to `127.0.0.1:3000/`. You should see `google.com`.
 
 ## File
 
-Go to `127.0.0.1:3000/pipe/https://raw.githubusercontent.com/dataprotocols/schemas/master/data-package.json`. you should see `https://raw.githubusercontent.com/dataprotocols/schemas/master/data-package.json`.
+Go to `localhost:3000/pipe/https://raw.githubusercontent.com/dataprotocols/schemas/master/data-package.json`. you should see `https://raw.githubusercontent.com/dataprotocols/schemas/master/data-package.json`.
 
 # Configuration
 

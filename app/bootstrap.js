@@ -2,6 +2,7 @@ import path from 'path'
 import _ from 'lodash'
 import cors from 'cors'
 import config from './config'
+import { notFound, serverError } from './middlewares'
 import routes from './routes'
 
 export default function bootstrap(app, express) {
@@ -17,5 +18,6 @@ export default function bootstrap(app, express) {
   app.use([ corsInstance ])
   app.options('*', corsInstance)
   app.use('', routes())
+  app.use([ notFound, serverError ])
   return app
 }
