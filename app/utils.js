@@ -1,12 +1,7 @@
 import _ from 'lodash'
 
 export function baseResponseModifier(response) {
-  // set content-range. papaparse.js likes it so it can stream.
-  if (!response.headers['content-range']) {
-    let length = response.headers['content-length']
-    let upper = parseInt(length, 10) - 1
-    response.headers['content-range'] = `bytes 0-${upper}/${length}`
-  }
+  // use this function to modify the response as a side effect
 }
 
 export function makeUrlForFilePipe(baseUri, queryObject) {
