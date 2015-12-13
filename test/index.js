@@ -12,7 +12,7 @@ describe('proxy types', () => {
   it('proxies domain to domain', (done) => {
     request(mappedDomain, (err, res, body) => {
       assert.isString(body)
-      assert.include(body, 'meta content="Search the world')
+      assert.include(body, '<!doctype html>')
       done()
     })
   })
